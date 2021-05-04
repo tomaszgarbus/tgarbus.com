@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://kit.fontawesome.com/45e777557b.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>Tomek Garbus</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-sm">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#div_about">About me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#div_projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#div_contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="container p-3">
+    <h1 class="display-1">Tomek Garbus</h1>
+</div>
+<div class="container p-3">
+    <a class="btn btn-primary" href="#div_contact">Contact me!</a>
+</div>
+<div class="container p-3" id="div_about">
+    <h2 class="display-5">About me</h2>
+    <p>
+        I'm a software engineer, currently working at Google Warsaw.
+    </p>
+    <a class="btn btn-primary" target="_blank" href="files/cv.pdf">CV</a>
+</div>
+<div class="container p-3" id="div_projects">
+    <h2 class="display-5">Projects</h2>
+    <div class="card-columns">
+        <div class="card">
+            <div class="card-body">
+                <h4>
+                    Controlled machine text generation of football articles
+                    <span class="badge bg-info">Master's Thesis</span>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapse_master" role="button"
+                       aria-controls="collapse_master"><i class="fas fa-angle-down"></i></a>
+                </h4>
+                <div class="collapse" id="collapse_master">
+                    <p>My master thesis @ University of Warsaw.</p>
+                    <p>Abstract:<br>
+                        <i>
+                            Among other benefits of the rapid development in deep learning, language modelling (LM)
+                            systems have excelled at producing relatively long text samples that are (almost) indistinguishable from human-written
+                            text. This work categorizes conditional text generation systems into three paradigms: generation with
+                            placeholders, prompted generation, adversarial/reinforcement learning and provides an overview of each
+                            paradigm along with experiments – both machine- and human-judged. Example corpora of football news
+                            are used to discuss how a fast, domain-specific named entity recognition (NER) system can be built without
+                            much manual labour for English and Polish. The NER module is evaluated on manually labelled texts in
+                            both languages. It is then used not only to build fine-tuning sets for the language model, but also to aid its
+                            generation procedure, resulting in samples more compliant with provided control codes.
+                            Finally, a simple tool EDGAR for prompt-driven generation is presented. Two demos are made for the reader to
+                            experiment with and compare the proposed solutions with simply finetuned GPT-2 model.
+                        </i>
+                    </p>
+                    <p>
+                        In this work I have researched and categorised approaches of putting language models to
+                        controlled use-cases, on a toy domain of football news. The best results were obtained by
+                        unconventional use of GPT-2.
+                    </p>
+                    <p>
+                        More interesting artifacts left from this research:
+                        <ul>
+                            <li><a href="http://text-quiz.herokuapp.com" target="_blank">Web quiz</a> for distinguishing
+                                between real and machine-generated articles. I posted it on football Reddits
+                                (<i>r/soccer, r/football</i>) and, it turned out, people had surprisingly hard time
+                                detecting the fakes!
+                            </li>
+                            <li>
+                                <a href="https://github.com/tomaszgarbus/edgar" target="_blank">EDGAR</a>, an end-to-end
+                                system that can be used to replicate my results or run controlled text generation on a
+                                different dataset. Unfortunately my notebooks have disappeared from Google Colab 😔
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <a class="btn btn-primary" href="files/master_paper.pdf" target="_blank">Read the paper 📜</a>
+                <a class="btn btn-primary" href="http://text-quiz.herokuapp.com/" target="_blank">Take the quiz! ⚽</a>
+                <div class="btn-group">
+                    <div class="btn btn-dark">Repositories:</div>
+                    <a class="btn btn-secondary" href="https://github.com/tomaszgarbus/edgar" target="_blank">EDGAR</a>
+                    <a class="btn btn-secondary" href="https://gitlab.com/tomasz.garbus1/experimental" target="_blank">Experimental</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4>
+                    Face authentication with liveness detection using depth and IR camera
+                    <span class="badge bg-info">Bachelor's Thesis</span>
+                    <a class="btn" data-bs-toggle="collapse" href="#collapse_bachelor" role="button"
+                       aria-controls="collapse_master"><i class="fas fa-angle-down"></i></a>
+                </h4>
+                <div class="collapse p-1" id="collapse_bachelor">
+                    <p>
+                        Researched and developed in a team of 4, in collaboration with Samsung. We have used Microsoft
+                        Kinect to build a POC of an authentication system based on face recognition.
+                    </p>
+                    <p>
+                        We collected the database by filming people at our faculty (all GDPR compliant) and experimented
+                        with different models, ensembles of models and normalisation techniques (using IR signal to
+                        rotate the face to the 90&deg angle).
+                    </p>
+                    <p>
+                        Our research also touched upon liveness detection issues (such as skin recognition) and
+                        correlation between collected frames (i.e. time to unlock) and model's accuracy.
+                    </p>
+                </div>
+                <a class="btn btn-primary" href="files/bsc_paper.pdf" target="_blank">Read the paper 📜</a>
+                <div class="btn-group">
+                    <div class="btn btn-dark">View source:</div>
+                    <a class="btn btn-secondary" href="https://github.com/tomaszgarbus/rgbd-face-auth" target="_blank">Github</a>
+                    <a class="btn btn-secondary" href="https://gitlab.com/lraszkiewicz/rgbd-face-auth" target="_blank">GitLab</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4>Preprocessing a car dataset for GANs</h4>
+                <a class="btn btn-primary" href="files/vrnn.pdf" target="_blank">Read the paper 📜</a>
+                <div class="btn-group">
+                    <div class="btn btn-dark">View source:</div>
+                    <a class="btn btn-secondary" href="https://github.com/tomaszgarbus/vrnn2018" target="_blank">Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container p-3" id="div_contact">
+    <h2 class="display-5">Contact</h2>
+    <p>Phone</p>
+    <p>Mail</p>
+    <p>Github/GitLab</p>
+</div>
+</body>
+</html>
